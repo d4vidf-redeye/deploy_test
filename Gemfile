@@ -15,6 +15,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem "camaleon_cms",  '>=2.3.6' # Stable versions 2.2.1, 2.1.1, 2.1.0
+# gem "camaleon_cms", github: 'owen2345/camaleon-cms' # current development version
+
+gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -52,3 +56,8 @@ group :development do
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-rvm', github: "capistrano/rvm"
 end
+
+
+#################### Camaleon CMS include all gems for plugins and themes #################### 
+require './lib/plugin_routes' 
+instance_eval(PluginRoutes.draw_gems)
